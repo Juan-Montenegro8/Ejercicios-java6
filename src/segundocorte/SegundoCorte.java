@@ -7,22 +7,22 @@ import java.util.Scanner;
 public class SegundoCorte {
 
     public static void main(String[] args) {
-        Scanner dg=new Scanner(System.in);
+        Scanner texto=new Scanner(System.in);
         
         System.out.println("numero minimo");
-        int a = dg.nextInt();
+        int minimo = texto.nextInt();
         System.out.println("numero max");
-        int b = dg.nextInt();
+        int maximo = texto.nextInt();
         System.out.println("cantidad ");
-        int c = dg.nextInt();
+        int cantidad = texto.nextInt();
         
         ArrayList<String> array = new ArrayList();                                                         
-        for (int i = a; i <= b; i++) {
-            array.add(i);
+        for (int i = minimo; i <= maximo; i++) {
+            array.add(""+i);
         }
         Collections.shuffle(array);
         
-        String [] numeros = new String[c];
+        String [] numeros = new String[cantidad];
         for(int i = 0; i < numeros.length; i++){                                                                  
             numeros[i]=array.get(i);
         }
