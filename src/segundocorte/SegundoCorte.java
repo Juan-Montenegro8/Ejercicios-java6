@@ -8,25 +8,30 @@ public class SegundoCorte {
 
     public static void main(String[] args) {
         Scanner textoScanner=new Scanner(System.in);
+
+        try {
+            System.out.println("numero minimo");
+            int minimo = textoScanner.nextInt();
+            System.out.println("numero max");
+            int maximo = textoScanner.nextInt();
+            System.out.println("cantidad ");
+            int cantidad = textoScanner.nextInt();
         
-        System.out.println("numero minimo");
-        int minimo = textoScanner.nextInt();
-        System.out.println("numero max");
-        int maximo = textoScanner.nextInt();
-        System.out.println("cantidad ");
-        int cantidad = textoScanner.nextInt();
+            ArrayList<String> array = new ArrayList();                                                         
+            for (int i = minimo; i <= maximo; i++) {
+                array.add(""+i);
+            }
+            Collections.shuffle(array);
         
-        ArrayList<String> array = new ArrayList();                                                         
-        for (int i = minimo; i <= maximo; i++) {
-            array.add(""+i);
+            String [] numeros = new String[cantidad];
+            for(int i = 0; i < numeros.length; i++){                                                                  
+                numeros[i]=array.get(i);
+            }
+            quicksort(numeros, 0, 0);
+        } catch (Exception e) {
+            textoScanner.close();
         }
-        Collections.shuffle(array);
         
-        String [] numeros = new String[cantidad];
-        for(int i = 0; i < numeros.length; i++){                                                                  
-            numeros[i]=array.get(i);
-        }
-        quicksort(numeros, 0, 0);
     }
     
     public static int particion(String arreglo[], int izquierda, int derecha) {
