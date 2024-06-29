@@ -7,14 +7,14 @@ import java.util.Scanner;
 public class SegundoCorte {
 
     public static void main(String[] args) {
-        Scanner texto=new Scanner(System.in);
+        Scanner textoScanner=new Scanner(System.in);
         
         System.out.println("numero minimo");
-        int minimo = texto.nextInt();
+        int minimo = textoScanner.nextInt();
         System.out.println("numero max");
-        int maximo = texto.nextInt();
+        int maximo = textoScanner.nextInt();
         System.out.println("cantidad ");
-        int cantidad = texto.nextInt();
+        int cantidad = textoScanner.nextInt();
         
         ArrayList<String> array = new ArrayList();                                                         
         for (int i = minimo; i <= maximo; i++) {
