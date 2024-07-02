@@ -8,6 +8,7 @@ public class SegundoCorte {
 
     public static void main(String[] args) {
         Scanner textoScanner=new Scanner(System.in);
+        ArrayList<String> array = new ArrayList <>();  
 
         try {
             System.out.println("numero minimo");
@@ -16,8 +17,7 @@ public class SegundoCorte {
             int maximo = textoScanner.nextInt();
             System.out.println("cantidad ");
             int cantidad = textoScanner.nextInt();
-        
-            ArrayList<String> array = new ArrayList();                                                         
+                       
             for (int i = minimo; i <= maximo; i++) {
                 array.add(""+i);
             }
@@ -30,6 +30,7 @@ public class SegundoCorte {
             quicksort(numeros, 0, 0);
         } catch (Exception e) {
             textoScanner.close();
+            
         }
         
     }
