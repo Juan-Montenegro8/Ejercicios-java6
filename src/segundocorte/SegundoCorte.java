@@ -7,13 +7,12 @@ import java.util.Scanner;
 public class SegundoCorte {
 
     public static void main(String[] args) {
-        Scanner textoScanner=new Scanner(System.in);
-        ArrayList<String> array = new ArrayList <>();  
-
-        try {
+        
+        try (Scanner textoScanner=new Scanner(System.in);) {
+            ArrayList<String> array = new ArrayList <>();  
             System.out.println("numero minimo");
             int minimo = textoScanner.nextInt();
-            System.out.println("numero max");
+            System.out.println("numero maximo");
             int maximo = textoScanner.nextInt();
             System.out.println("cantidad ");
             int cantidad = textoScanner.nextInt();
@@ -27,9 +26,9 @@ public class SegundoCorte {
             for(int i = 0; i < numeros.length; i++){                                                                  
                 numeros[i]=array.get(i);
             }
-            quicksort(numeros, 0, 0);
+            DdivideYVenceras(numeros, 0, numeros.length - 1);
         } catch (Exception e) {
-            textoScanner.close();
+            System.out.println("Ocurrio un error: " + e.getMessage());
             
         }
         
@@ -81,11 +80,11 @@ iteración)
 }
 
 // Divide y vencerás
-private static void quicksort(String arreglo[], int izquierda, int derecha) {
+private static void DdivideYVenceras(String arreglo[], int izquierda, int derecha) {
     if (izquierda < derecha) {
         int indiceParticion = particion(arreglo, izquierda, derecha);
-        quicksort(arreglo, izquierda, indiceParticion);
-        quicksort(arreglo, indiceParticion + 1, derecha);
+        DdivideYVenceras(arreglo, izquierda, indiceParticion);
+        DdivideYVenceras(arreglo, indiceParticion + 1, derecha);
     }
 }
 
